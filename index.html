@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Rock Paper Scissors</title>
+
+    <!-- css sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+    <!-- Load three.js -->
+    <script defer src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
+    <script defer src="https://unpkg.com/@tensorflow/tfjs-converter@2.1.0/dist/tf-converter.js"></script>
+    
+    <!-- GPU backend -->
+    <script defer src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
+    <!-- CPU backend -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-cpu"></script> -->
+    <!-- WASM backend -->
+    <!-- <script src="https://unpkg.com/@tensorflow/tfjs-backend-wasm@2.1.0/dist/tf-backend-wasm.js"></script> -->
+    
+    <script defer src="https://unpkg.com/@tensorflow-models/handpose@0.0.6/dist/handpose.js"></script>
+
+    <!-- js -->
+    <script src="js/kNear.js"></script>
+    <script defer src="./js/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">🤖AI Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <div>
+            <video id="videoElement" style="display: none;">
+            </video>
+            <canvas id="canvasElement"></canvas>
+        </div>
+        <div id="outcomeContainer">
+            <p id="predict">loading</p>
+            <p id="aipredict"></p>
+            <p id="score">Score: 0</p>
+            <p id="countdown"></p>
+            <button id="dataLog">Log data</button>
+            <button id="logpredictionarray">Log array</button>
+            <button id="startGame">Start Game</button>
+            <p id="outcome"></p>
+        </div>
+    </main>
+</body>
+
+</html>

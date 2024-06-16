@@ -1,0 +1,67 @@
+html {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e73c7e;
+	background-size: 500% 500%;
+	animation: gradient 15s ease infinite;
+    position: relative;
+    min-height: 90vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+	margin-bottom: 50px;
+}
+
+canvas {
+    border: black 5px solid;
+}
+
+button {
+    border-radius: 5px;
+    border: black 1px solid;
+    background-color: #00e1ff;
+    font-weight: bolder;
+    font-size: 2em;
+    padding: 5px;
+}
+
+#predict {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 5em;
+}
+
+#aipredict {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 5em;
+}
+
+#countdown {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 5em;
+}
+.countdownstart {
+    animation: countdown 1s ease infinite;
+}
+
+#score {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+
+@keyframes countdown {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(2); }
+  }
