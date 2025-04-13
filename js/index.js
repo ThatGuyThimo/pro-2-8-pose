@@ -19,11 +19,11 @@ let canvas = document.getElementById("canvasElement");
 const VIDEO_WIDTH = 600
 const VIDEO_HEIGHT = 420
 
-let togeleDataElement = document.getElementById("dataLog") 
-togeleDataElement.addEventListener("click", logLearnedData)
+// let togeleDataElement = document.getElementById("dataLog") 
+// togeleDataElement.addEventListener("click", logLearnedData)
 
-let togeledatalogElement = document.getElementById("logpredictionarray") 
-togeledatalogElement.addEventListener("click", logpredarray)
+// let togeledatalogElement = document.getElementById("logpredictionarray") 
+// togeledatalogElement.addEventListener("click", logpredarray)
 
 let gameBtn = document.getElementById("startGame") 
 gameBtn.addEventListener("click", countdown)
