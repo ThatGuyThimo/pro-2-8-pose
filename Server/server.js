@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config({path: '.env'})
 
 // import { router as jokeRoute } from './API/Routes/joke.js'
-// import { router as chatRoute } from './API/Routes/chat.js'
+import { router as chatRoute } from './API/Routes/chat.js'
 import { router as RPSRoute } from './API/Routes/RPS.js'
 // import { router as cardRoute } from './API/Routes/card.js'
 
@@ -30,10 +30,16 @@ app.use((req, res, next) => {
 
     next()
 })
+app.options('*', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.sendStatus(200);
+});
 
 
 // app.use('/joke', jokeRoute)
-// app.use('/chat', chatRoute)
+app.use('/chat', chatRoute)
 // app.use('/card', cardRoute)
 app.use('/RPS', RPSRoute)
 

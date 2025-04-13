@@ -373,7 +373,8 @@ function startCam() {
 
 async function getAiPrediction() {
     return new Promise(async (resolve, reject) => {
-    await fetch('http://127.0.0.1:3000/RPS', {
+        // await fetch('https://192.168.1.128:3010/RPS', {
+        await fetch('https://thimodehaan.com:3010/RPS', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -392,30 +393,23 @@ async function getAiPrediction() {
 }
 let predarray = []
 
-
 function knnPredict(predictions) {
     let predictP = document.getElementById("predict")
 
     // console.log(predictions)
 
     let array = []
-    let fixedarray = []
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i <= 20; i++) {
         array.push(predictions[0].landmarks[i][0])
         array.push(predictions[0].landmarks[i][1])
         array.push(predictions[0].landmarks[i][2])
-    }
-    for (let i = 0; i <= 20; i++) {
-        fixedarray.push(predictions[0].landmarks[i][0])
-        fixedarray.push(predictions[0].landmarks[i][1])
-        fixedarray.push(predictions[0].landmarks[i][2])
     }
     let prediction = knn.classify(array)
     if (predarray[prediction] === undefined) {
         predarray[prediction] = []
     } else {
-        predarray[prediction].push(fixedarray)
+        predarray[prediction].push(array)
     }
 
     // console.log(predarray)

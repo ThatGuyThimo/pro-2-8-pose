@@ -8,6 +8,12 @@ router.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
+router.options('*', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    res.sendStatus(200);
+});
 
 let message = ['system', 'you are a rock paper scissors ai, i am using you as an api so you should only reply with only one of the following: rock, paper, scissors, you should respond when you get this message']
 
