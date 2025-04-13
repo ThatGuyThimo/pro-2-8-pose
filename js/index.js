@@ -437,7 +437,7 @@ async function main() {
 }
 
 function learn() {
-    fetch('./posedata/poseData.json').then(response => response.json()).then((poseData) => {
+    fetch('/posedata/poseData.json').then(response => response.json()).then((poseData) => {
         // globalPoseData = poseData
         for (let key in poseData) {
             console.log(`Key: ${key}`);
