@@ -437,7 +437,7 @@ async function main() {
 }
 
 function learn() {
-    fetch('/posedata/poseData.json').then(response => response.json()).then((poseData) => {
+    fetch('https://raw.githubusercontent.com/ThatGuyThimo/pro-2-8-pose/refs/heads/main/posedata/poseData.json').then(response => response.json()).then((poseData) => {
         // globalPoseData = poseData
         for (let key in poseData) {
             console.log(`Key: ${key}`);
